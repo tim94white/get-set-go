@@ -1,0 +1,2 @@
+class FurnishingsController < ApplicationController
+end
