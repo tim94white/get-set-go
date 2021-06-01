@@ -1,0 +1,32 @@
+<h1> <%= Your Dashboard %></h1>
+
+<div>
+  <h3> <%= Your furnishings %></h3>
+  <div>
+    <% @furnishings.each do |f| %>
+    <p> <%= link_to furnishing.title, furnishing_path(furnishing) %> </p>
+      <li><%= f.description %></li>
+      <li><%= f.price %></li>
+      <li><%= f.location %></li>
+      <li><%= f.furnishing_type %></li>
+      <%= link_to "Edit", edit_furnishing_path %>
+      <%= link_to "Delete", user_path(@user), method: :delete %>
+    <% end %>
+    <%= link_to "Add New", new_furnishing_path %>
+  </div>
+</div>
+
+<div>
+<h3> <%= Your bookings %> </h3>
+  <div>
+    <% @furnishings.each do |f| %>
+      <li><%= f.title %></li>
+      <li><%= f.description %></li>
+      <li><%= f.price %></li>
+    <% end %>
+      <% @bookings.each do |f| %>
+      <li><%= f.start_date %></li>
+      <li><%= f.start_date %></li>
+    <% end %>
+  </div>
+</div>
