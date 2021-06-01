@@ -1,22 +1,16 @@
 class BookingsController < ApplicationController
 
-  def index
-    @bookings = Booking.all
-  end 
-
   def new
     @booking = Booking.new
-    @furnishing = Furnishing.find(params[:id])
   end 
   
   def create
     @booking = Booking.new(booking_params)
-    # @furnishing = Furnishing.find(params[:id])
     @booking.user_id = current_user.id
     @booking.furnishing_id = params[:furnishing_id]
 
     if booking.save
-      redirect_do user_path
+      redirect_to user_path(@user)
     else
       render :new
     end
@@ -26,20 +20,20 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end 
   
-  # def update
-  #   @booking = Booking.find(params[:id])
-  #   if booking.update(booking_params)
-  #     redirect_to user_path notice: "Your booking was successfully added"
-  #   else
-  #     render :edit
-  #   end 
-  # end 
+  def update
+    @booking = Booking.find(params[:id])
+    if booking.update(booking_params)
+      redirect_to user_path(@user) notice: "Your booking was successfully added"
+    else
+      render :edit
+    end 
+  end 
 
-  # def destroy
-  #   @booking = Booking.find(params[:id])
-  #   @booking.destroy
-  #   redirect_to user_path notice: "Your booking was successfully deleted"
-  # end 
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to user_path(@user) notice: "Your booking was successfully deleted"
+  end 
 
   private
 
