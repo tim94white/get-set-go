@@ -42,4 +42,5 @@ class FurnishingsController < ApplicationController
 
   def strong_params
     params.require(:furnishing).permit(:title, :description, :price, :location, :furnishing_type)
+  end
 end
