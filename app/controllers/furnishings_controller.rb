@@ -13,6 +13,7 @@ class FurnishingsController < ApplicationController
 
   def create
     @furnishing = Furnishing.new(strong_params)
+    @furnishing.user_id = current_user.id
     if @furnishing.save
       redirect_to furnishing_path(@furnishing)
     else
@@ -30,6 +31,7 @@ class FurnishingsController < ApplicationController
       redirect_to furnishing_path(@furnishing)
     else
       render :edit
+    end
   end
 
   def destroy
