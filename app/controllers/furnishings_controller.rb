@@ -28,7 +28,7 @@ class FurnishingsController < ApplicationController
   def update
     @furnishing = Furnishing.find(params[:id])
     if @furnishing.update(strong_params)
-      redirect_to furnishing_path(@furnishing)
+      redirect_to user_path(current_user)
     else
       render :edit
     end
@@ -37,7 +37,7 @@ class FurnishingsController < ApplicationController
   def destroy
     @furnishing = Furnishing.find(params[:id])
     @furnishing.destroy
-    redirect_to furnishings_path
+    redirect_to user_path(current_user)
   end
 
   private
