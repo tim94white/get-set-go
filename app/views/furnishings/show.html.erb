@@ -4,3 +4,5 @@
 <p><%= @furnishing.location %></p>
 <p><%= @furnishing.furnishing_type %></p>
 <%= link_to "Back to the index page", furnishings_path %>
+<br>
+<%= link_to "Book me", new_furnishing_booking_path(@furnishing) %>

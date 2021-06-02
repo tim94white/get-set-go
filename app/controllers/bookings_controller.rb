@@ -2,15 +2,20 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    @furnishing = Furnishing.find(params[:furnishing_id])
   end 
   
   def create
+    # raise
     @booking = Booking.new(booking_params)
-    @booking.user_id = current_user.id
-    @booking.furnishing_id = params[:furnishing_id]
+    @furnishing = Furnishing.find(params[:furnishing_id])
 
-    if booking.save
-      redirect_to user_path(@user)
+    @booking.user_id = current_user.id
+    @booking.furnishing_id = params[:furnishing_id]    
+    # @booking.furnishing = @furnishing # ASK THIS!!
+
+    if @booking.save
+      redirect_to user_path(current_user)
     else
       render :new
     end
@@ -23,7 +28,7 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     if booking.update(booking_params)
-      redirect_to user_path(@user) notice: "Your booking was successfully added"
+      redirect_to user_path(@user) # notice: "Your booking was successfully added"
     else
       render :edit
     end 
@@ -32,13 +37,14 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to user_path(@user) notice: "Your booking was successfully deleted"
+    redirect_to user_path(@user) # notice: "Your booking was successfully deleted"
   end 
 
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :furnishing_id, :user_id)
+    params.require(:booking).permit(:start_date, :end_date)
+    # params.require(:booking).permit(:start_date, :end_date, :furnishing_id, :user_id)
   end 
 
 end
