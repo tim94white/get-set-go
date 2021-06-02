@@ -1,10 +1,10 @@
-<h1> <%= Your Dashboard %></h1>
+<h1>  Your Dashboard</h1>
 
 <div>
-  <h3> <%= Your furnishings %></h3>
+  <h3>  Your furnishings </h3>
   <div>
     <% @furnishings.each do |f| %>
-    <p> <%= link_to furnishing.title, furnishing_path(furnishing) %> </p>
+    <p> <%= link_to f.title, furnishing_path(f) %> </p>
       <li><%= f.description %></li>
       <li><%= f.price %></li>
       <li><%= f.location %></li>
@@ -17,22 +17,13 @@
 </div>
 
 <div>
-<h3> <%= Your bookings %> </h3>
+<h3> Your bookings </h3>
   <div>
-    <% @furnishings.each do |f| %>
-      <li><%= f.title %></li>
-      <li><%= f.description %></li>
-      <li><%= f.price %></li>
-    <% end %>
-      <% @bookings.each do |f| %>
-      <li><%= f.start_date %></li>
-      <li><%= f.start_date %></li>
+    <% @bookings.each do |booking| %>
+      <h2><%= booking.furnishing.title %></h2> 
+      <li><%= booking.start_date %></li>
+      <li><%= booking.end_date %></li>
     <% end %>
   </div>
 </div>
-<h2><%= @furnishing.title %></h2>
-<p><%= @furnishing.description %></p>
-<p><%= @furnishing.price %></p>
-<p><%= @furnishing.location %></p>
-<p><%= @furnishing.furnishing_type %></p>
 <%= link_to "Back to the index page", furnishings_path %>
