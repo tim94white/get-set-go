@@ -1,9 +1,11 @@
 <ul>
   <% @furnishings.each do |furnishing| %>
-    <li><%= link_to furnishing.title, furnishing_path(furnishing) %></li>
-    <li><%= furnishing.description %></li>
-    <li><%= furnishing.price %></li>
-    <li><%= furnishing.location %></li>
-    <li><%= furnishing.furnishing_type %></li>
+  <div>
+    <li><h3><%= link_to furnishing.title, furnishing_path(furnishing) %></h3></li>
+    <li><p>Description: <%= furnishing.description %></p></li>
+    <li><p>Price: £<%= furnishing.price %></p></li>
+    <li><p>Location: <%= furnishing.location %></p></li>
+    <li><p>Type: <%= furnishing.furnishing_type %></p></li>
+  </div>
   <% end %>
 </ul>
