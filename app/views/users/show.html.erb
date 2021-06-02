@@ -1,29 +1,50 @@
-<h1>  Your Dashboard</h1>
+<div class="container">
+  <h1> Your Dashboard</h1>
 
-<div>
-  <h3>  Your furnishings </h3>
-  <div>
-    <% @furnishings.each do |f| %>
-    <p> <%= link_to f.title, furnishing_path(f) %> </p>
-      <li><%= f.description %></li>
-      <li><%= f.price %></li>
-      <li><%= f.location %></li>
-      <li><%= f.furnishing_type %></li>
-      <%= link_to "Edit", edit_furnishing_path %>
-      <%= link_to "Delete", user_path(@user), method: :delete %>
-    <% end %>
-    <%= link_to "Add New", new_furnishing_path %>
-  </div>
-</div>
+  <div class="your-furnishing">
+    <h3> Your furnishings </h3>
+    <div class="furnishing-section">
+      <% @furnishings.each do |furnishing| %>
+        <div class="card p-3 m-3">
+          <%= link_to furnishing.title, furnishing_path(furnishing) %>
+            <li>
+              <%= furnishing.description %>
+            </li>
+            <li>
+              <%= furnishing.price %>
+            </li>
+            <li>
+              <%= furnishing.location %>
+            </li>
+            <li>
+              <%= furnishing.furnishing_type %>
+            </li>
+            <%= link_to "Edit" , edit_furnishing_path, class:"btn btn-primary" %>
+              <%= link_to "Delete" , user_path(@user), method: :delete, class:"btn btn-danger" %>
+        </div>
 
-<div>
-<h3> Your bookings </h3>
-  <div>
-    <% @bookings.each do |booking| %>
-      <h2><%= booking.furnishing.title %></h2> 
-      <li><%= booking.start_date %></li>
-      <li><%= booking.end_date %></li>
-    <% end %>
+        <% end %>
+          <br>
+          <br>
+          <%= link_to "Add New" , new_furnishing_path, class:"ml-5 btn btn-success" %>
+    </div>
   </div>
+
+  <div class="your-booking">
+    <h3> Your bookings </h3>
+    <div class="booking-section">
+      <% @bookings.each do |booking| %>
+        <h2>
+          <%= booking.furnishing.title %>
+        </h2>
+        <li>
+          <%= booking.start_date %>
+        </li>
+        <li>
+          <%= booking.end_date %>
+        </li>
+        <% end %>
+    </div>
+  </div>
+  <%= link_to "Back to the index page" , furnishings_path %>
 </div>
-<%= link_to "Back to the index page", furnishings_path %>
