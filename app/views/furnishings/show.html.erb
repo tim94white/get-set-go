@@ -5,4 +5,8 @@
 <p><%= @furnishing.furnishing_type %></p>
 <%= link_to "Back to the index page", furnishings_path %>
 <br>
+<% if current_user %>
 <%= link_to "Book me", new_furnishing_booking_path(@furnishing) %>
+<% else %>
+<%= link_to "Please log in to book",  new_user_session_path %>
+<% end %>
