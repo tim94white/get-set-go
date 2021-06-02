@@ -27,8 +27,8 @@ class BookingsController < ApplicationController
   
   def update
     @booking = Booking.find(params[:id])
-    if booking.update(booking_params)
-      redirect_to user_path(@user) # notice: "Your booking was successfully added"
+    if @booking.update(booking_params)
+      redirect_to user_path(current_user) # notice: "Your booking was successfully added"
     else
       render :edit
     end 
@@ -37,7 +37,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to user_path(@user) # notice: "Your booking was successfully deleted"
+    redirect_to user_path(current_user) # notice: "Your booking was successfully deleted"
   end 
 
   private
