@@ -5,25 +5,28 @@
     <h3> Your furnishings </h3>
     <div class="furnishing-section">
       <% @furnishings.each do |furnishing| %>
-        <p>
+        <div class="card p-3 m-3">
           <%= link_to furnishing.title, furnishing_path(furnishing) %>
-        </p>
-        <li>
-          <%= furnishing.description %>
-        </li>
-        <li>
-          <%= furnishing.price %>
-        </li>
-        <li>
-          <%= furnishing.location %>
-        </li>
-        <li>
-          <%= furnishing.furnishing_type %>
-        </li>
-        <%= link_to "Edit" , edit_furnishing_path %>
-          <%= link_to "Delete" , user_path(@user), method: :delete %>
-            <% end %>
-              <%= link_to "Add New" , new_furnishing_path %>
+            <li>
+              <%= furnishing.description %>
+            </li>
+            <li>
+              <%= furnishing.price %>
+            </li>
+            <li>
+              <%= furnishing.location %>
+            </li>
+            <li>
+              <%= furnishing.furnishing_type %>
+            </li>
+            <%= link_to "Edit" , edit_furnishing_path, class:"btn btn-primary" %>
+              <%= link_to "Delete" , user_path(@user), method: :delete, class:"btn btn-danger" %>
+        </div>
+
+        <% end %>
+          <br>
+          <br>
+          <%= link_to "Add New" , new_furnishing_path, class:"ml-5 btn btn-success" %>
     </div>
   </div>
 
