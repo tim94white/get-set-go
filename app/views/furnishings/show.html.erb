@@ -15,7 +15,7 @@
     <div class= "buttons">
       <%= link_to "Back to all", furnishings_path, class: "card-btn" %>
       <% unless current_user == @furnishing.user %>
-        <%= link_to "Book me" , new_furnishing_booking_path(@furnishing) %>
+        <%= link_to "Book me" , new_furnishing_booking_path(@furnishing), class: "card-solid" %>
       <% end %>
     </div>
   </div>
