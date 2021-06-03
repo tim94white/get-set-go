@@ -15,4 +15,6 @@
 </p>
 <%= link_to "Back to the index page" , furnishings_path %>
 <br>
-<%= link_to "Book me" , new_furnishing_booking_path(@furnishing) %>
+<% unless current_user == @furnishing.user %>
+  <%= link_to "Book me" , new_furnishing_booking_path(@furnishing) %>
+<% end %>
