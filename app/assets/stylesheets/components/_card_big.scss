@@ -7,7 +7,7 @@
 }
 
 .card-big > img {
-  height: 200px;
+  height: 300px;
   width: 100%;
   border-radius: 8px;
   object-fit: cover;
@@ -34,6 +34,7 @@
 .card-big .card-big-info {
   padding: 20px;
   padding-bottom: 0px;
+  padding-top: 0px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
