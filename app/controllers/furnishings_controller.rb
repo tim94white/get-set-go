@@ -1,6 +1,10 @@
 class FurnishingsController < ApplicationController
   def index
-    @furnishings = Furnishing.all
+    if params[:query].present?
+      @furnishings = Furnishing.search_by_furnishing(params[:query])
+    else
+      @furnishings = Furnishing.all
+    end
   end
 
   def show
