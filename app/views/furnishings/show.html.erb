@@ -1,7 +1,7 @@
 <div class= "container">
   <div class="card-big">
     <h2><%= @furnishing.title %></h2>
-    <img src="#" />
+    <%= cl_image_tag @furnishing.photo.key, height: 300, width: 400, crop: :fill %>
     <div class="card-big-info">
       <div>
         <p><strong>Description: </strong><%= @furnishing.description %></p>
@@ -15,7 +15,7 @@
     <div class= "buttons">
       <%= link_to "Back to all", furnishings_path, class: "card-btn" %>
       <% unless current_user == @furnishing.user %>
-        <%= link_to "Book me" , new_furnishing_booking_path(@furnishing) %>
+        <%= link_to "Book me" , new_furnishing_booking_path(@furnishing), class: "card-solid" %>
       <% end %>
     </div>
   </div>
