@@ -4,4 +4,5 @@ class Furnishing < ApplicationRecord
   validates :description, presence: true
   validates :price, presence: true, numericality: { only_integer: true }
   validates :furnishing_type, presence: true
+  has_one_attached :photo
 end

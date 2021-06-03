@@ -2,16 +2,29 @@
   <% @furnishings.each do |furnishing| %>
     <div class="card-small p-3 m-3">
       <%= cl_image_tag furnishing.photo.key, height: 300, width: 400, crop: :fill %>
-        <h3>
-          <%= link_to furnishing.title, furnishing_path(furnishing) %>
-        </h3>
-        <div class="card-small-infos">
-          <p><i class="fas fa-map-marker-alt"></i>
-            <%= furnishing.location %>
-          </p>
-          <p>£<%= furnishing.price %>
-          </p>
-        </div>
+        <% if current_user %>
+          <li>
+            <h3>
+              <%= link_to furnishing.title, furnishing_path(furnishing) %>
+            </h3>
+          </li>
+          <% else %>
+            <li>
+              <h3>
+                <%= link_to furnishing.title, new_user_session_path, data: { confirm: "log on to view" } %>
+              </h3>
+            </li>
+            <% end %>
+              <h3>
+                <%= link_to furnishing.title, furnishing_path(furnishing) %>
+              </h3>
+              <div class="card-small-infos">
+                <p><i class="fas fa-map-marker-alt"></i>
+                  <%= furnishing.location %>
+                </p>
+                <p>£<%= furnishing.price %>
+                </p>
+              </div>
     </div>
     <% end %>
 </div>
