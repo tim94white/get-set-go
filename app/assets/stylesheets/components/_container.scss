@@ -9,3 +9,13 @@
   grid-gap: 16px;
   // padding: 16px;
 }
+
+.map-container {
+  padding: 10vh 20vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  padding: 16px;
+  margin: 32px;
+}
