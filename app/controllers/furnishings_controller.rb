@@ -9,6 +9,13 @@ class FurnishingsController < ApplicationController
 
   def show
     @furnishing = Furnishing.find(params[:id])
+
+    @markers = [
+      {
+        lat: @furnishing.latitude,
+        lng: @furnishing.longitude
+      }
+    ]
   end
 
   def new
