@@ -1,3 +1,11 @@
 .container {
   padding: 10vh 20vw;
 }
+
+.furnishing_container {
+  padding: 10vh 5vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  // padding: 16px;
+}

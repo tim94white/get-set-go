@@ -1,11 +1,38 @@
 // Specific CSS for your home-page
-.banner {
-  background-size: cover;
-  background-size: contain;
-  height: 500px;
-  width: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
+body {
+  background-color: #EEF4D4;
 }
 
-
+.banner {
+  background-size: cover;
+  height: calc(100vh - 66px);
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), image-url('furniture-set.jpg');
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  color: #fff;
+  font-size: x-large;
+  padding-left: 112px;
+  padding-bottom: 112px;
+  font-weight: 500;
+  h1 {
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
+    padding-top: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 8px;
+    border-radius: 4px;
+  }
+  p {
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
+    width: fit-content;
+    padding-top: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 8px;
+    border-radius: 4px;
+  }
+}

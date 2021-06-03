@@ -43,6 +43,6 @@ class FurnishingsController < ApplicationController
   private
 
   def strong_params
-    params.require(:furnishing).permit(:title, :description, :price, :location, :furnishing_type)
+    params.require(:furnishing).permit(:title, :description, :price, :location, :furnishing_type, :photo)
   end
 end
