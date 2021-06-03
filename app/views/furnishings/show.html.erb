@@ -1,22 +1,31 @@
-<h2>
-  <%= @furnishing.title %>
-</h2>
-<p>
-  <%= @furnishing.description %>
-</p>
-<p>
-  <%= @furnishing.price %>
-</p>
-<p>
-  <%= @furnishing.location %>
-</p>
-<p>
-  <%= @furnishing.furnishing_type %>
-</p>
-<%= link_to "Back to the index page" , furnishings_path %>
-  <br>
-  <% if current_user %>
-    <%= link_to "Book me" , new_furnishing_booking_path(@furnishing) %>
+
+<div class= "container">
+  <div class="card-big">
+    <h2><%= @furnishing.title %></h2>
+    <img src="#" />
+    <div class="card-big-info">
+      <div>
+        <p><strong>Description: </strong><%= @furnishing.description %></p>
+        <p><strong>Price: </strong>£<%= @furnishing.price %></p>
+        <div class= "location">
+          <p><i class="fas fa-map-marker-alt"></i></p>
+          <p class="loc-word"><%= @furnishing.location %></p>
+        </div>
+      </div>
+    </div>
+    <div class= "buttons">
+      <%= link_to "Back to all", furnishings_path, class: "card-btn" %>
+      <% if current_user %>
+        <%= link_to "Book me", new_furnishing_booking_path(@furnishing), class: "card-solid" %>
       <% else %>
-        <%= link_to "Please log in to book" , new_user_session_path %>
-          <% end %>
+        <%= link_to "Please log in to book" , new_user_session_path, class: "card-btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,59 @@
+.card-big {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  background-color: rgba(218, 239, 179, 0.6)
+}
+
+.card-big > img {
+  height: 200px;
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.card-big h2 {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0;
+  padding-top: 20px;
+  padding-left: 20px;
+  color: #1C2826;
+}
+
+.card-big p {
+  font-size: 15px;
+  margin: 0;
+  color: #1C2826;
+}
+
+
+.card-big .card-big-info {
+  padding: 20px;
+  padding-bottom: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-big .card-big {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
+.location {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.loc-word {
+  padding-left: 5px;
+}
+
+
