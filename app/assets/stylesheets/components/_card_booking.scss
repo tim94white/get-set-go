@@ -1,7 +1,14 @@
 .card-booking {
   overflow: hidden;
-  background-color: rgba(218, 239, 179, 0.6);
+  background-color: rgba(142,68,61,0.2);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 8px;
   color: #1c2826;
+  h1 {
+    margin-top: 8px;
+  }
+}
+
+.booking {
+  display: flex;
 }
