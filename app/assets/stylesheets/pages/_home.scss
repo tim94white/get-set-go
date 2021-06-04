@@ -3,6 +3,16 @@ body {
   background-color: #EEF4D4;
 }
 
+.navbar-brand {
+  svg {
+    color: white;
+    transition: color .2s;
+    &:hover {
+      color: rgba(255, 255, 255, 0.6);
+    }
+  }
+}
+
 .banner {
   background-size: cover;
   height: calc(100vh - 66px);
@@ -16,6 +26,7 @@ body {
   color: #fff;
   font-size: x-large;
   padding-left: 112px;
+  padding-right: 112px;
   padding-bottom: 112px;
   font-weight: 500;
   h1 {
@@ -25,8 +36,9 @@ body {
     padding-right: 16px;
     padding-bottom: 8px;
     border-radius: 4px;
+    font-size: 2rem;
   }
-  p {
+  h2 {
     background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
     width: fit-content;
     padding-top: 8px;
@@ -34,5 +46,21 @@ body {
     padding-right: 16px;
     padding-bottom: 8px;
     border-radius: 4px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    font-size: 1.5rem;
   }
+}
+
+.search-bar form {
+ display: flex;
+ input[type="text"] {
+  max-width: 240px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+ }
+ .btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+ }
 }
