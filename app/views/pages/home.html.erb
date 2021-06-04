@@ -1,14 +1,16 @@
 <div class="banner">
   <div>
     <h1>Rent beautiful furnishings to design your set</h1>
-    <p>Get your set ready, and go!</p>
-    <%= form_tag furnishings_path, method: :get do %>
-      <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find a furnishing"
-    %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
+    <h2>Get your set ready, and go!</h2>
+    <div class="search-bar">
+      <%= form_tag furnishings_path, method: :get do %>
+        <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find a furnishing"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
 </div>
