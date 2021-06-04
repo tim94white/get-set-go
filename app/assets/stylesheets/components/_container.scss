@@ -2,7 +2,7 @@
   padding: 10vh 20vw;
 }
 
-.furnishing_container {
+.furnishing-container {
   padding: 5vh 5vw;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -18,4 +18,8 @@
   padding: 16px;
   margin: 32px;
   position: relative;
+}
+
+.form {
+   padding: 5vh 30vw;
 }

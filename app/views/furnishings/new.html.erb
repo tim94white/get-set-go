@@ -1,11 +1,20 @@
-<%= simple_form_for(@furnishing) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.input :location %>
-  <%= f.input :furnishing_type %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
-
-
+<div class="form">
+  <h3>Create your new furnishing!</h3>
+  <br>
+  <%= simple_form_for(@furnishing) do |f| %>
+    <%= f.input :title, placeholder:"Type your title *", label: false %>
+      <%= f.input :description, placeholder:"Type your description *", label: false %>
+        <div class="row">
+          <div class="col">
+            <%= f.input :price, placeholder:"Type your price *", label: false, class: 'form-control' %>
+          </div>
+          <div class="col">
+            <%= f.input :furnishing_type, placeholder:"Type your furnishing type *", label: false, class: 'form-control'
+              %>
+          </div>
+        </div>
+        <%= f.input :location, placeholder:"Type your location", label: false %>
+          <%= f.input :photo, as: :file %>
+            <%= f.submit class:"btn btn-danger" %>
+              <% end %>
+</div>
