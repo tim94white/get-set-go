@@ -1,6 +1,6 @@
 .card-small {
   overflow: hidden;
-  height: 250px;
+  height: 300px;
   width: 250px;
   background-color: rgba(218, 239, 179, 0.6);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -8,7 +8,7 @@
 }
 
 .card-small > img {
-  height: 150px;
+  height: 180px;
   width: 100%;
   object-fit: cover;
   border-radius: 8px;
