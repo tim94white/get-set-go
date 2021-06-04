@@ -14,12 +14,14 @@ const initMapbox = () => {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v10'
+      style: 'mapbox://styles/tim94white/ckpi8qvws05l417t7fnstahvh'
     });
     
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
-      new mapboxgl.Marker()
+      new mapboxgl.Marker({
+        offset: [175, 0]
+      })
         .setLngLat([ marker.lng, marker.lat ])
         .addTo(map);
     });
