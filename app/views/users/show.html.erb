@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-user">
   <h1> Your Dashboard</h1>
 
   <div class="card-furnishing">
@@ -10,13 +10,13 @@
           <%= cl_image_tag furnishing.photo.key, height: 300, width: 400, crop: :fill %>
           <div class="dash-buttons">
             <%= link_to "Edit" , edit_furnishing_path(furnishing), class:"card-btn" %>
-          <%= link_to "Delete" , furnishing_path(furnishing), method: :delete, class:"card-solid" %>
+          <%= link_to "Delete" , furnishing_path(furnishing), method: :delete, class:"card-btn" %>
           </div>
           <br>
       </div>
     <% end %>
     </div>
-    <%= link_to "Add New" , new_furnishing_path, class:"last-btn" %>
+    <%= link_to "Add New" , new_furnishing_path, class:"card-solid" %>
   </div>
 
   <br>
@@ -37,11 +37,11 @@
         </div>
         <div class="dash-buttons">
           <%= link_to "Edit" , edit_booking_path(booking), class:"card-btn" %>
-          <%= link_to "Delete" , booking_path(booking), method: :delete, class:"card-solid" %>
+          <%= link_to "Delete" , booking_path(booking), method: :delete, class:"card-btn" %>
         </div>
         <br>
         <% end %>
     </div>
   </div>
-  <%= link_to "Back to the index page" , furnishings_path, class:"last-btn" %>
+  <%= link_to "Back to the index page" , furnishings_path, class:"card-solid" %>
 </div>
