@@ -1,20 +1,26 @@
-<div class="mb-4 d-flex align-items-center justify-content-center py-5">
-  <div class="text-center text-white">
-    <h3>Book <%= @furnishing.title %></h3>
-  </div>
-</div>
+<div class="booking-container">
+  <div class="card-booking p-3 m-1">
+    <div class="text-center">
+      <h3>Book <%= @furnishing.title %>
+      </h3>
+      <%= cl_image_tag @furnishing.photo.key, height: 150, width: 180, crop: :fill, class: "m-3" %>
+    </div>
 
-<div class="container py-2 mb-5">
-  <div class="offset-sm-3 col-sm-6">
-    <%= simple_form_for [@furnishing, @booking] do |f| %>
-      <%= f.input :start_date, as: :date, html5: true %>
-      <%= f.input :end_date, as: :date, html5: true %>
-      <%= f.submit %>
-    <% end %>
-    <br>
-    <div>
-      <%= link_to "Go back", furnishing_path(@furnishing), class: 'btn btn-primary' %>
+    <div class="offset-sm-3 col-sm-6">
+      <%= simple_form_for [@furnishing, @booking] do |f| %>
+        <%= f.input :start_date, as: :date, html5: true %>
+          <%= f.input :end_date, as: :date, html5: true %>
+            <div class="row justify-content-between">
+
+              <div class="col-12 col-sm-5 col-md-5">
+                <%= f.submit "Book me!" , class: "btn btn-danger" %>
+              </div>
+              <div class="col-12 col-sm-5 col-md-5">
+                <%= link_to "Back" , furnishing_path(@furnishing), class: 'btn btn-primary' %>
+              </div>
+
+            </div>
+            <% end %>
     </div>
   </div>
 </div>
-
