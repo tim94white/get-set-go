@@ -20,7 +20,7 @@ const initMapbox = () => {
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
       new mapboxgl.Marker({
-        offset: [175, 0]
+        // offset: [175, 0]
       })
         .setLngLat([ marker.lng, marker.lat ])
         .addTo(map);
