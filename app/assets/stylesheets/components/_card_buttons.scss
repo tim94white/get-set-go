@@ -1,40 +1,41 @@
 .card-btn {
-  color: #1c2826;;
-  border: 1px solid #1c2826;
+  color: black;
   padding: 5px 15px;
   border-radius: 8px;
   font-weight: lighter;
   transition: opacity 0.4s ease;
   margin-right: 10px;
   margin-top: 5px;
+  background-color: rgba(142,68,61, 0.5);
 
 }
 
 .card-solid {
   color: #eef4d4;
-  border: 1px solid #1c2826;
   padding: 5px 15px;
   border-radius: 8px;
   font-weight: lighter;
   transition: opacity 0.4s ease;
   margin-right: 10px;
   margin-top: 5px;
-  background-color: #1C2826;
+  background-color: rgb(142,68,61);
+  margin-left: 15px;
+
 }
 
 .card-btn:hover {
   opacity: 1;
-  color: #eef4d4;
-  border: 1px solid #1c2826;
+  color: #fff;
   text-decoration: none;
-  background-color: #1c2826;
+  background-color: rgba(142,68,61, 0.5);
 }
 
 .card-solid:hover {
+  margin-left: 15px;
   opacity: 1;
-  color: #1C2826;
+  color: #fff;
   border: 1px solid #1C2826;
-  background-color: #eef4d4;
+  background-color: rgba(142,68,61, 0.5);
   text-decoration: none;
 }
 
